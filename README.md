@@ -3,3 +3,6 @@ Hey there! This is a project that seeks to provide better user-video pose feedba
 
 Teamwork:
 The initial foundation for this project is intended to be created with my fellow team members: xxx, xxx. And, it will be entered for CTB (China Think Big).
+
+Name: 
+The name for this application is called Emulume. Indeed, it is a palindrome. The idea of the palindrome being symmetric connects with the idea that your dance will be very accurate to the dance that you are learning by using this application to guide your learning experience. "emu" is short for emulate, meaning: match or surpass (a person or achievement), typically by imitation.

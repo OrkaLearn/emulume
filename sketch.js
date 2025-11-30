@@ -11,7 +11,7 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
 
   // Create webcam capture with no fixed size
-  video = createCapture(VIDEO);
+  video = createCapture(VIDEO, {flipped:true});
   video.hide();
 
   bodyPose.detectStart(video, gotPoses);
@@ -64,7 +64,14 @@ function draw() {
     let y = videoY - sy;
     
     // Scale to display size
-    x = (x / cropW) * displayW + dx;
+    // The capture is created with `{flipped:true}` so the video frames are
+    // already mirrored horizontally. The pose keypoints come from the
+    // estimator in the video's coordinate space (mirrored), so to overlay
+    // correctly we must flip the X coordinate when mapping into canvas
+    // coordinates.
+    x = (x / cropW) * displayW;
+    // Flip horizontally relative to the destination rectangle.
+    x = dx + displayW - x;
     y = (y / cropH) * displayH;
     
     return { x, y };
